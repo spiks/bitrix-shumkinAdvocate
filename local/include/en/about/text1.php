@@ -1,0 +1,1 @@
+It should be noted that the current economic agenda ensures the relevance of the withdrawal of current assets.<br>

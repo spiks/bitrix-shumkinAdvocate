@@ -1,0 +1,1 @@
+When contacting, it is necessary to briefly indicate the essence of the problem, briefly describe the events that preceded the appeal. This is done because the lawyer can determine how urgently it is necessary to start providing assistance, it often happens that it is required immediately.<br>

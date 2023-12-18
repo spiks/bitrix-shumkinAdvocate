@@ -1,0 +1,14 @@
+.name_user{
+  display: none;
+}
+
+.development{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+.development__body{
+    font-size: 25px;
+}
