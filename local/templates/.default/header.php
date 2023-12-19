@@ -76,7 +76,10 @@ Array()
 		<header class="header">
     <div class="header-top">
         <div class="header-top__container">
-            <a href="#contacts" class="address" data-da=".menu-block__body, 1023.98"><?=$GLOBALS['ADDRESS']?></a>
+            <a href="#contacts" class="address" data-da=".menu-block__body, 1023.98">
+              <span><?=$GLOBALS['ADDRESS']?></span>
+              <span><?=$GLOBALS['ADDRESS_2']?></span>
+            </a>
             <?if(false):?>
               <a href="mailto:<?=$GLOBALS['EMAIL']?>" class="mail" data-da=".menu-block__body, 1023.98"><?=$GLOBALS['EMAIL']?></a>
             <?endif;?>

@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("description", "Защита по уголовным делам подозреваемых, обвиняемых на стадии предварительного расследования и подсудимых на стадии судебного производства.");
-$APPLICATION->SetPageProperty("title", "Адвокат Нахшунов А.Я.");
+$APPLICATION->SetPageProperty("title", "Адвокат Шумкин А.М.");
 ?>
 
 <section class="firstblock" style="background-image: url(<?= SITE_TEMPLATE_PATH ?>/assets/img/firstblock.jpg)">
@@ -580,9 +580,22 @@ $APPLICATION->SetPageProperty("title", "Адвокат Нахшунов А.Я.")
     </div>
   </div>
 </section>
-<section class="diplom">
-  <div class="diplom__container">
-    <h2 class="title">
+<?if(false):?>
+  <section class="diplom">
+    <div class="diplom__container">
+      <h2 class="title">
+        <?$APPLICATION->IncludeComponent(
+          "bitrix:main.include",
+          "",
+          Array(
+            "AREA_FILE_RECURSIVE" => "Y",
+            "AREA_FILE_SHOW" => "file",
+            "AREA_FILE_SUFFIX" => "inc",
+            "EDIT_TEMPLATE" => "",
+            "PATH" => "/local/include/ru/diplom/title.php"
+          )
+        );?> 
+      </h2>
       <?$APPLICATION->IncludeComponent(
         "bitrix:main.include",
         "",
@@ -591,146 +604,136 @@ $APPLICATION->SetPageProperty("title", "Адвокат Нахшунов А.Я.")
           "AREA_FILE_SHOW" => "file",
           "AREA_FILE_SUFFIX" => "inc",
           "EDIT_TEMPLATE" => "",
-          "PATH" => "/local/include/ru/diplom/title.php"
+          "PATH" => "/local/include/ru/diplom/img.php"
         )
       );?> 
-    </h2>
-    <?$APPLICATION->IncludeComponent(
-      "bitrix:main.include",
-      "",
-      Array(
-        "AREA_FILE_RECURSIVE" => "Y",
-        "AREA_FILE_SHOW" => "file",
-        "AREA_FILE_SUFFIX" => "inc",
-        "EDIT_TEMPLATE" => "",
-        "PATH" => "/local/include/ru/diplom/img.php"
-      )
-    );?> 
-  </div>
-</section>
-<section class="certificates" id="certificates">
-  <div class="certificates__container">
-    <h2 class="title">
-      <?$APPLICATION->IncludeComponent(
-        "bitrix:main.include",
-        "",
-        Array(
-          "AREA_FILE_RECURSIVE" => "Y",
-          "AREA_FILE_SHOW" => "file",
-          "AREA_FILE_SUFFIX" => "inc",
-          "EDIT_TEMPLATE" => "",
-          "PATH" => "/local/include/ru/certificates/title.php"
-        )
-      );?>
-    </h2>
-    <div class="text">
-      <?$APPLICATION->IncludeComponent(
-        "bitrix:main.include",
-        "",
-        Array(
-          "AREA_FILE_RECURSIVE" => "Y",
-          "AREA_FILE_SHOW" => "file",
-          "AREA_FILE_SUFFIX" => "inc",
-          "EDIT_TEMPLATE" => "",
-          "PATH" => "/local/include/ru/certificates/desc.php"
-        )
-      );?>
     </div>
-    <?$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "category-tabs", Array(
-      "ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
-        "CACHE_FILTER" => "N",	// Кешировать при установленном фильтре
-        "CACHE_GROUPS" => "Y",	// Учитывать права доступа
-        "CACHE_TIME" => "36000000",	// Время кеширования (сек.)
-        "CACHE_TYPE" => "A",	// Тип кеширования
-        "COUNT_ELEMENTS" => "Y",	// Показывать количество элементов в разделе
-        "COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",	// Показывать количество
-        "FILTER_NAME" => "sectionsFilter",	// Имя массива со значениями фильтра разделов
-        "IBLOCK_ID" => "10",	// Инфоблок
-        "IBLOCK_TYPE" => "Content",	// Тип инфоблока
-        "SECTION_CODE" => "",	// Код раздела
-        "SECTION_FIELDS" => array(	// Поля разделов
-          0 => "ID",
-          1 => "",
+  </section>
+  <section class="certificates" id="certificates">
+    <div class="certificates__container">
+      <h2 class="title">
+        <?$APPLICATION->IncludeComponent(
+          "bitrix:main.include",
+          "",
+          Array(
+            "AREA_FILE_RECURSIVE" => "Y",
+            "AREA_FILE_SHOW" => "file",
+            "AREA_FILE_SUFFIX" => "inc",
+            "EDIT_TEMPLATE" => "",
+            "PATH" => "/local/include/ru/certificates/title.php"
+          )
+        );?>
+      </h2>
+      <div class="text">
+        <?$APPLICATION->IncludeComponent(
+          "bitrix:main.include",
+          "",
+          Array(
+            "AREA_FILE_RECURSIVE" => "Y",
+            "AREA_FILE_SHOW" => "file",
+            "AREA_FILE_SUFFIX" => "inc",
+            "EDIT_TEMPLATE" => "",
+            "PATH" => "/local/include/ru/certificates/desc.php"
+          )
+        );?>
+      </div>
+      <?$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "category-tabs", Array(
+        "ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
+          "CACHE_FILTER" => "N",	// Кешировать при установленном фильтре
+          "CACHE_GROUPS" => "Y",	// Учитывать права доступа
+          "CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+          "CACHE_TYPE" => "A",	// Тип кеширования
+          "COUNT_ELEMENTS" => "Y",	// Показывать количество элементов в разделе
+          "COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",	// Показывать количество
+          "FILTER_NAME" => "sectionsFilter",	// Имя массива со значениями фильтра разделов
+          "IBLOCK_ID" => "10",	// Инфоблок
+          "IBLOCK_TYPE" => "Content",	// Тип инфоблока
+          "SECTION_CODE" => "",	// Код раздела
+          "SECTION_FIELDS" => array(	// Поля разделов
+            0 => "ID",
+            1 => "",
+          ),
+          "SECTION_ID" => $_REQUEST["SECTION_ID"],	// ID раздела
+          "SECTION_URL" => "",	// URL, ведущий на страницу с содержимым раздела
+          "SECTION_USER_FIELDS" => array(	// Свойства разделов
+            0 => "",
+            1 => "",
+          ),
+          "SHOW_PARENT_NAME" => "Y",	// Показывать название раздела
+          "TOP_DEPTH" => "2",	// Максимальная отображаемая глубина разделов
+          "VIEW_MODE" => "LINE",	// Вид списка подразделов
         ),
-        "SECTION_ID" => $_REQUEST["SECTION_ID"],	// ID раздела
-        "SECTION_URL" => "",	// URL, ведущий на страницу с содержимым раздела
-        "SECTION_USER_FIELDS" => array(	// Свойства разделов
-          0 => "",
-          1 => "",
+        false
+      );?>
+      <?$APPLICATION->IncludeComponent(
+        "bitrix:news.list", 
+        "certificate.list", 
+        array(
+          "ACTIVE_DATE_FORMAT" => "d.m.Y",
+          "ADD_SECTIONS_CHAIN" => "N",
+          "AJAX_MODE" => "N",
+          "AJAX_OPTION_ADDITIONAL" => "",
+          "AJAX_OPTION_HISTORY" => "N",
+          "AJAX_OPTION_JUMP" => "N",
+          "AJAX_OPTION_STYLE" => "Y",
+          "CACHE_FILTER" => "N",
+          "CACHE_GROUPS" => "Y",
+          "CACHE_TIME" => "36000000",
+          "CACHE_TYPE" => "A",
+          "CHECK_DATES" => "Y",
+          "DETAIL_URL" => "",
+          "DISPLAY_BOTTOM_PAGER" => "Y",
+          "DISPLAY_DATE" => "N",
+          "DISPLAY_NAME" => "Y",
+          "DISPLAY_PICTURE" => "Y",
+          "DISPLAY_PREVIEW_TEXT" => "Y",
+          "DISPLAY_TOP_PAGER" => "N",
+          "FIELD_CODE" => array(
+            0 => "",
+            1 => "",
+          ),
+          "FILTER_NAME" => "",
+          "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+          "IBLOCK_ID" => "10",
+          "IBLOCK_TYPE" => "Content",
+          "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+          "INCLUDE_SUBSECTIONS" => "Y",
+          "MESSAGE_404" => "",
+          "NEWS_COUNT" => "99",
+          "PAGER_BASE_LINK_ENABLE" => "N",
+          "PAGER_DESC_NUMBERING" => "N",
+          "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+          "PAGER_SHOW_ALL" => "N",
+          "PAGER_SHOW_ALWAYS" => "N",
+          "PAGER_TEMPLATE" => ".default",
+          "PAGER_TITLE" => "Новости",
+          "PARENT_SECTION" => "",
+          "PARENT_SECTION_CODE" => "",
+          "PREVIEW_TRUNCATE_LEN" => "",
+          "PROPERTY_CODE" => array(
+            0 => "",
+            1 => "",
+          ),
+          "SET_BROWSER_TITLE" => "N",
+          "SET_LAST_MODIFIED" => "N",
+          "SET_META_DESCRIPTION" => "N",
+          "SET_META_KEYWORDS" => "N",
+          "SET_STATUS_404" => "N",
+          "SET_TITLE" => "N",
+          "SHOW_404" => "N",
+          "SORT_BY1" => "ACTIVE_FROM",
+          "SORT_BY2" => "SORT",
+          "SORT_ORDER1" => "DESC",
+          "SORT_ORDER2" => "ASC",
+          "STRICT_SECTION_CHECK" => "N",
+          "COMPONENT_TEMPLATE" => "certificate.list"
         ),
-        "SHOW_PARENT_NAME" => "Y",	// Показывать название раздела
-        "TOP_DEPTH" => "2",	// Максимальная отображаемая глубина разделов
-        "VIEW_MODE" => "LINE",	// Вид списка подразделов
-      ),
-      false
-    );?>
-    <?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"certificate.list", 
-	array(
-		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"ADD_SECTIONS_CHAIN" => "N",
-		"AJAX_MODE" => "N",
-		"AJAX_OPTION_ADDITIONAL" => "",
-		"AJAX_OPTION_HISTORY" => "N",
-		"AJAX_OPTION_JUMP" => "N",
-		"AJAX_OPTION_STYLE" => "Y",
-		"CACHE_FILTER" => "N",
-		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "36000000",
-		"CACHE_TYPE" => "A",
-		"CHECK_DATES" => "Y",
-		"DETAIL_URL" => "",
-		"DISPLAY_BOTTOM_PAGER" => "Y",
-		"DISPLAY_DATE" => "N",
-		"DISPLAY_NAME" => "Y",
-		"DISPLAY_PICTURE" => "Y",
-		"DISPLAY_PREVIEW_TEXT" => "Y",
-		"DISPLAY_TOP_PAGER" => "N",
-		"FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
-		"FILTER_NAME" => "",
-		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "10",
-		"IBLOCK_TYPE" => "Content",
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-		"INCLUDE_SUBSECTIONS" => "Y",
-		"MESSAGE_404" => "",
-		"NEWS_COUNT" => "99",
-		"PAGER_BASE_LINK_ENABLE" => "N",
-		"PAGER_DESC_NUMBERING" => "N",
-		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-		"PAGER_SHOW_ALL" => "N",
-		"PAGER_SHOW_ALWAYS" => "N",
-		"PAGER_TEMPLATE" => ".default",
-		"PAGER_TITLE" => "Новости",
-		"PARENT_SECTION" => "",
-		"PARENT_SECTION_CODE" => "",
-		"PREVIEW_TRUNCATE_LEN" => "",
-		"PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
-		),
-		"SET_BROWSER_TITLE" => "N",
-		"SET_LAST_MODIFIED" => "N",
-		"SET_META_DESCRIPTION" => "N",
-		"SET_META_KEYWORDS" => "N",
-		"SET_STATUS_404" => "N",
-		"SET_TITLE" => "N",
-		"SHOW_404" => "N",
-		"SORT_BY1" => "ACTIVE_FROM",
-		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "DESC",
-		"SORT_ORDER2" => "ASC",
-		"STRICT_SECTION_CHECK" => "N",
-		"COMPONENT_TEMPLATE" => "certificate.list"
-	),
-	false
-);?>
-  </div>
-</section>
+        false
+      );?>
+
+    </div>
+  </section>
+<?endif;?>
 <?if(false):?>
 <!-- <section class="gratitude" id="gratitude">
   <div class="gratitude__container">
@@ -844,7 +847,7 @@ $APPLICATION->SetPageProperty("title", "Адвокат Нахшунов А.Я.")
 	"spiks:main.feedback", 
 	"ContactsPageForm", 
 	array(
-		"EMAIL_TO" => "anahshunov1988@gmail.com",
+		"EMAIL_TO" => "amshumkin@gmail.com",
 		"EVENT_MESSAGE_ID" => array(
 			0 => "7",
 		),
@@ -862,7 +865,8 @@ $APPLICATION->SetPageProperty("title", "Адвокат Нахшунов А.Я.")
     <div class="map-fone" id="map">
       <div class="contacts-block">
         <div class="contacts-block__title">Адрес</div>
-        <div class="contacts-block__text"><?=$GLOBALS['ADDRESS']?></div>
+        <div class="contacts-block__text"><?=$GLOBALS['ADDRESS_ALL']?></div>
+        <div class="contacts-block__text"><?=$GLOBALS['ADDRESS_ALL_2']?></div>
         <a href="https://yandex.ru/maps/2/saint-petersburg/house/shosse_revolyutsii_3k1/Z0kYcgdoT0EBQFtjfXV0eXplYQ==/?ll=30.409085%2C59.958199&z=17.07" class="contacts-block__btn button" target="_blank">Построить маршрут</a>
       </div>
     </div>
